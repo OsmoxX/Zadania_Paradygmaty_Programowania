@@ -1,4 +1,4 @@
-public class implementacja_sortowania_liczb {
+public class Implementacja_proceduralna_sortowania_list_liczb {
     public static class BubbleSort {
         public static void bubbleSort(int[] arr) {
             int n = arr.length;
