@@ -5,20 +5,21 @@ import java.util.List;
 public class MergeSort<T extends IMyComparable<T>> implements ISortingAlgorithm<T> {
     @Override
     public void sort(List<T> list) {
-        if (list.size() < 2) return;
+        if (list.size() < 2) return;  // Jeśli lista ma 1 element, to jest już posortowana
+
         int mid = list.size() / 2;
         List<T> left = new ArrayList<>(list.subList(0, mid));
         List<T> right = new ArrayList<>(list.subList(mid, list.size()));
 
-        sort(left);
-        sort(right);
+        sort(left);  // Rekurencyjnie sortujemy lewą połowę
+        sort(right); // Rekurencyjnie sortujemy prawą połowę
         merge(list, left, right);
     }
 
     private void merge(List<T> list, List<T> left, List<T> right) {
         int i = 0, j = 0, k = 0;
         while (i < left.size() && j < right.size()) {
-            if (left.get(i).compareTo((T) right.get(j)) <= 0) {
+            if (left.get(i).compareTo(right.get(j)) <= 0) {
                 list.set(k++, left.get(i++));
             } else {
                 list.set(k++, right.get(j++));
