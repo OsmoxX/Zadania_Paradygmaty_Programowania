@@ -1,4 +1,4 @@
-public class sORtowania_list_liczb {
+public class Sortowanie_list_liczb {
     public static class BubbleSort {
         public static void bubbleSort(int[] arr) {
             int n = arr.length;
